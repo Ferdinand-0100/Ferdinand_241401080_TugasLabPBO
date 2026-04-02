@@ -1,4 +1,9 @@
-package edu.university.model;
+package edu.university.main;
+
+import edu.university.model.Mahasiswa;
+import edu.university.staff.Pegawai;
+import edu.university.staff.Dosen;
+import edu.university.staff.StafAdministrasi;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -13,6 +18,17 @@ public class MainApp {
             System.out.println("Nama: " + m.getNama());
             System.out.println("IPK : " + m.getIPK());
             System.out.println("Kategori IPK: " + m.getKategoriIPK());
+            System.out.println();
+        }
+
+        Dosen d1 = new Dosen("Pak Andre", 999999, 67);
+        StafAdministrasi s1 = new StafAdministrasi("CapuccinoAssassino", 10000, 67);
+
+        Pegawai[] daftarPegawai = {d1, s1};
+
+        for (Pegawai p : daftarPegawai) {
+            System.out.println("Nama Pegawai: " + p.getNama());
+            System.out.println("Total Gaji  : " + p.hitungGaji());
             System.out.println();
         }
     }
